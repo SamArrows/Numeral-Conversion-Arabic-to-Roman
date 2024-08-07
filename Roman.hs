@@ -22,8 +22,8 @@ convertTwoDigs :: Int -> String
 convertTwoDigs x
     | x < 40 = (multiplyChar (x `div` 10) "X") ++ convertDigit (x `mod` 10)
     | x < 50 = "XL" ++ convertDigit (x `mod` 10)
-    | x < 90 = "L" ++ convertDigit (x `mod` 10)
-    | x < 100 = "XC" ++ convertDigit (x `mod` 10)
+    | x < 90 = "L" ++ convertDigit (x - 50)
+    | x < 100 = "XC" ++ convertDigit (x - 90)
     | otherwise = "0"
     
 convertDigit :: Int -> String
@@ -42,16 +42,11 @@ multiplyChar x y
 
 main :: IO()
 main =
-    print(convFour 3958)
+    print(convFour 60)
     
     
     
       
-    
-    
-    
-    
-    
     
     
     
